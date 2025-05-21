@@ -27,12 +27,26 @@ conda activate rstab
 (1) Clone the RStab repository.
 ```bash
 git clone https://github.com/pzzz-cv/RStab.git --recursive
+cd RStab
 ```
 
 (2) Install the dependent libraries.
 ```bash
 pip install torch==1.12.0+cu116 torchvision==0.13.0+cu116 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu116
 pip install -r requirements.txt
+```
+
+(3) Download the checkpoints.
+Download the [checkpoints](https://drive.google.com/file/d/1q3QM1damtvHLukhIOIAdv9IKm646Oj11/view?usp=drive_link) and put it in RStab_core/pretrained.
+
+## Demo
+
+For a quick start, you can run:
+```bash
+cd Deep3D
+python geometry_optimizer.py --video_path ../input/0.avi --output_dir ../output/Deep3D --name 0.avi
+cd ../RStab_core
+python rectify.py --expname 0.avi
 ```
 
 ## Inference
@@ -48,7 +62,7 @@ cd ..
 
 If you are interested in the stabilized results of Deep3D, you can run: 
 ```bash
-python rectify.py --output_dir ../output/Deep3D --name  <video_name>
+python rectify.py --output_dir ../output/Deep3D --name <video_name>
 ```
 
 Results would look like:
@@ -69,9 +83,8 @@ output
 
 (2) Run RStab.
 
-Create the environment, here we show an example using conda.
 ```bash
-cd RStab
+cd RStab_core
 python rectify.py --expname <video_name>
 cd ..
 ```
@@ -88,10 +101,11 @@ output
     └── ...
 ```
 
-To modify the network, simply edit the parameters in the configs/eval.txt:
+To modify the network, simply edit the parameters in the RStab_core/configs/eval.txt:
 
-* **`--height`:** Height of the input video.
-* **`--width`:** Width of the input video.
+* **`--keep_size`:** Whether to keep the output video the same size as the input video.
+* **`--height`:** Height of the output video.
+* **`--width`:** Width of the output video.
 * **`--chunk_size`:** Number of rays rendered. This parameter affects the GPU memory usage and increasing this parameter can speed up the model within feasible limits.
 * **`--N_samples`:** Number of samples taken along each ray.
 * **`--white_bkgd`:** Color of background.
@@ -100,7 +114,7 @@ To modify the network, simply edit the parameters in the configs/eval.txt:
 * **`--sample_range_gain`:** Gain of the sampling range.
 * **`--no_color_correction`:** Whether to use Color Correction.
            
-You can customize the frame selection strategy as needed by adjust **`--neighbor_list`**, and we offer some reference options：
+You can customize the frame selection strategy as needed by adjust **`--neighbor_list`**, and we offer some reference options:
 * 13 [-20,-15,-10,-3,-2, -1,0,1, 2,3,10,15,20]
 * 7  [-5, -3, -1,0,1, 3, 5]
 * 5  [-5, -3, 0, 3, 5]
@@ -112,7 +126,7 @@ For generating stable trajectories, you can refer to and modify the smooth.py.
 ## Optional
 In some extreme cases, Deep3D does not perform well, and MonST3R is recommended instead.
 
-For installation and usage instructions of MonST3R, please refer to the official repository of [MonST3R](https://github.com/Junyi42/monst3r). Since the official project does not save the generated camera poses and depth estimates, we recommend using our provided code and setting up the environment according to the official requirements. 
+For installation and usage instructions of MonST3R, please refer to the official repository of [MonST3R](https://github.com/Junyi42/monst3r). Since the official project does not save the camera poses and depth estimation, we recommend using our provided code and setting up the environment according to the official requirements. 
 
 We offer a simple guide to assist you with this process:
 
@@ -138,6 +152,9 @@ cd ../../../
 
 3.Run MonST3R.
 
+Download the [checkpoints](https://drive.google.com/file/d/1e-2lGrnxcQXIqjOn-UoIsZnV98CvjKXa/view?usp=drive_link) and put it in MonST3R/checkpoints.
+
+Then run:
 ```bash
 cd MonST3R
 python demo.py --input ../output/Deep3D/images  --output_dir ../output/MonST3R/<video_name>  --seq_name output
@@ -151,7 +168,7 @@ output
     ├── video1
     │   ├── _depth_maps.gif
     │   ├── 00000.npy
-    │   ├── ...(estimation of depth)
+    │   ├── ... (estimation of depth)
     │   ├── conf_0.npy
     │   ├── ...
     │   ├── dynamic_mask_0.png
@@ -161,8 +178,8 @@ output
     │   ├── init_conf_0.npy
     │   ├── ...
     │   ├── pred_intrinsics.txt
-    │   ├── ...(intrinsics of camera)
-    │   ├── pred_traj.txt（extrinsics of camera）
+    │   ├── ... (intrinsics of camera)
+    │   ├── pred_traj.txt (extrinsics of camera)
     │   ├── ...
     │   └── scene.glb
     ├── video2/
@@ -176,11 +193,10 @@ If you find this work useful in your research, please cite:
 @inproceedings{peng20243d,
   title={3D multi-frame fusion for video stabilization},
   author={Peng, Zhan and Ye, Xinyi and Zhao, Weiyue and Liu, Tianqi and Sun, Huiqiang and Li, Baopu and Cao, Zhiguo},
-  booktitle={{IEEE/CVF} Conference on Computer Vision and Pattern Recognition,
-                  {CVPR} 2024, Seattle, WA, USA, June 16-22, 2024},
+  booktitle={{IEEE/CVF} Conference on Computer Vision and Pattern Recognition, {CVPR} 2024, Seattle, WA, USA, June 16-22, 2024},
   pages={7507--7516},
   year={2024},
-  publisher={{IEEE}},
+  publisher={{IEEE}}
 }
 ```
 

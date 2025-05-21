@@ -1,0 +1,24 @@
+### INPUT
+rootdir = ./  # REPLACE THIS with YOUR PATH.
+ckpt_path = ./pretrained/model_255000.pth   # REPLACE THIS with YOUR PATH.
+distributed = False
+
+## dataset
+eval_dataset = nus
+factor = 1
+keep_size = False
+height = 360 
+width = 640
+
+### TESTING 
+chunk_size = 100000
+
+### RENDERING 
+N_importance = 0
+N_samples = 3
+inv_uniform = True
+white_bkgd = False
+neighbor_list = [-20,-15,-10,-3,-2, -1,0,1, 2,3,10,15,20]
+preprocessing_model = Deep3D #[MonST3R, Deep3D]
+sample_range_gain = 1.
+no_color_correction = False
