@@ -174,23 +174,14 @@ output
 ## Citation
 If you find this work useful in your research, please cite:
 ```
-@inproceedings{wu20223d,
-  title={3D Instances as 1D Kernels},
-  author={Wu, Yizheng and Shi, Min and Du, Shuaiyuan and Lu, Hao and Cao, Zhiguo and Zhong, Weicai},
-  booktitle={Computer Vision--ECCV 2022: 17th European Conference, Tel Aviv, Israel, October 23--27, 2022, Proceedings, Part XXIX},
-  pages={235--252},
-  year={2022},
-  organization={Springer}
-}
-```
-
-```
 @inproceedings{peng20243d,
   title={3D multi-frame fusion for video stabilization},
   author={Peng, Zhan and Ye, Xinyi and Zhao, Weiyue and Liu, Tianqi and Sun, Huiqiang and Li, Baopu and Cao, Zhiguo},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  booktitle={{IEEE/CVF} Conference on Computer Vision and Pattern Recognition,
+                  {CVPR} 2024, Seattle, WA, USA, June 16-22, 2024},
   pages={7507--7516},
-  year={2024}
+  year={2024},
+  publisher={{IEEE}},
 }
 ```
 
