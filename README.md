@@ -1,4 +1,4 @@
-## 3D Multi-frame Fusion for Video Stabilization (CVPR 2024)
+# 3D Multi-frame Fusion for Video Stabilization (CVPR 2024)
 ![overview](fig/overview.png)
 
 Code for the paper **3D Multi-frame Fusion for Video Stabilization**, CVPR 2024.
