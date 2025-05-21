@@ -1,4 +1,3 @@
-# RStab
 ## 3D Multi-frame Fusion for Video Stabilization (CVPR 2024)
 ![overview](fig/overview.png)
 
