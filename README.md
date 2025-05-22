@@ -37,6 +37,7 @@ pip install -r requirements.txt
 ```
 
 (3) Download the checkpoints.
+
 Download the [checkpoints](https://drive.google.com/file/d/1q3QM1damtvHLukhIOIAdv9IKm646Oj11/view?usp=drive_link) and put it in RStab_core/pretrained.
 
 ## Demo
