@@ -114,14 +114,15 @@ To modify the network, simply edit the parameters in the RStab_core/configs/eval
 * **`--sample_range_gain`:** Gain of the sampling range.
 * **`--no_color_correction`:** Whether to use Color Correction.
            
-You can customize the frame selection strategy as needed by adjust **`--neighbor_list`**, and we offer some reference options:
+You can customize the frame selection strategy as needed by adjusting **`--neighbor_list`**, and we offer some reference options:
 * 13 [-20,-15,-10,-3,-2, -1,0,1, 2,3,10,15,20]
 * 7  [-5, -3, -1,0,1, 3, 5]
 * 5  [-5, -3, 0, 3, 5]
 * 3  [-3, 0, 3]
+
 The more adjacent frames used, the higher the quality of the synthesized image, but the longer the computation time.
 
-For generating stable trajectories, you can refer to and modify the smooth.py.
+For generating stable trajectories, you can refer to and modify the RStab_core/smooth.py.
 
 ## Optional
 In some extreme cases, Deep3D does not perform well, and MonST3R is recommended instead.
