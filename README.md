@@ -102,7 +102,7 @@ output
     └── ...
 ```
 
-To modify the network, simply edit the parameters in the RStab_core/configs/eval.txt:
+To modify the network, simply edit the parameters in the `RStab_core/configs/eval.txt`:
 
 * **`--keep_size`:** Whether to keep the output video the same size as the input video.
 * **`--height`:** Height of the output video.
@@ -123,7 +123,7 @@ You can customize the frame selection strategy as needed by adjusting **`--neigh
 
 The more adjacent frames used, the higher the quality of the synthesized image, but the longer the computation time.
 
-For generating stable trajectories, you can refer to and modify the RStab_core/smooth.py.
+For generating stable trajectories, you can refer to and modify the `RStab_core/smooth.py`.
 
 ## Optional
 In some extreme cases, Deep3D does not perform well, and MonST3R is recommended instead.
