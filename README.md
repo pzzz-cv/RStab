@@ -181,8 +181,8 @@ output
     │   ├── ...
     │   ├── pred_intrinsics.txt
     │   ├── ... (intrinsics of camera)
-    │   ├── pred_traj.txt (extrinsics of camera)
-    │   ├── ...
+    │   ├── pred_traj.txt
+    │   ├── ... (extrinsics of camera)
     │   └── scene.glb
     ├── video2/
     └── ...
