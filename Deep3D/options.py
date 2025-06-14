@@ -107,7 +107,7 @@ class Options:
         self.parser.add_argument("--batch_size",
                                  type=int,
                                  help="batch size",
-                                 default=29)
+                                 default=70)
         self.parser.add_argument("--learning_rate",
                                  type=float,
                                  help="learning rate",
