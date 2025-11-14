@@ -193,12 +193,11 @@ output
 If you find this work useful in your research, please cite:
 ```
 @inproceedings{peng20243d,
-  title={3D multi-frame fusion for video stabilization},
-  author={Zhan Peng and Xinyi Ye and Weiyue Zhao and Tianqi Liu and Huiqiang Sun and Baopu Li and Zhiguo Cao},
-  booktitle={{IEEE/CVF} Conference on Computer Vision and Pattern Recognition, {CVPR} 2024, Seattle, WA, USA, June 16-22, 2024},
+  title={3d multi-frame fusion for video stabilization},
+  author={Peng, Zhan and Ye, Xinyi and Zhao, Weiyue and Liu, Tianqi and Sun, Huiqiang and Li, Baopu and Cao, Zhiguo},
+  booktitle=CVPR,
   pages={7507--7516},
-  year={2024},
-  publisher={{IEEE}}
+  year={2024}
 }
 ```
 
